@@ -40,7 +40,7 @@ var mainState = {
     
     //If the bird is out of the world (too high or too low), call the 'restartGame' function
     if (this.bird.inWorld == false)
-      this.retartGame();
+      this.restartGame();
   },
   
   // Make the bird jump
