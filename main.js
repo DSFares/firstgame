@@ -16,6 +16,9 @@ var mainState = {
     
         // Load the pipe sprite
         game.load.image('pipe', 'assets/pipe.png');
+        
+        // Load the jump sound
+        game.load.audio('jump', 'assets/jump.wav');
     },
   
     // This function is called after the preload function
@@ -51,6 +54,9 @@ var mainState = {
         
         // change the center of rotation for the bird to make flying animation more natural
         this.bird.anchor.setTo(-0.2, 0.5);
+        
+        // Add jump sound to game
+        this.jumpSound = game.add.audio('jump');
     },
   
     // This function is called 60 times per second
@@ -75,6 +81,9 @@ var mainState = {
         // If bird is dead, it shouldn't be able to jump :-p
         if(this.bird.alive == false)
             return;
+        
+        // Play sound whenever bird jumps
+        this.jumpSound.play();
         
         // Add a vertical velocity to the bird
         this.bird.body.velocity.y = -350;
