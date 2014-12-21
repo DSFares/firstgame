@@ -44,6 +44,10 @@ var mainState = {
         
         // Add pipes to the screen every 1.5 seconds
         this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
+        
+        // Add the score display to the top left of the screen
+        this.score = 0;
+        this.labelScore = game.add.text(20, 20, "0", { font: "30px Arial", fill: "#ffffff" });
     },
   
     // This function is called 60 times per second
@@ -53,6 +57,9 @@ var mainState = {
         //If the bird is out of the world (too high or too low), call the 'restartGame' function
         if (this.bird.inWorld == false)
             this.restartGame();
+            
+        // Reset the game everytime the bird collides with a pipe
+        game.physics.arcade.overlap(this.bird, this.pipes, this.restartGame, null, this);
     },
   
     // Make the bird jump
@@ -92,6 +99,10 @@ var mainState = {
         for (var i = 0; i < 8; i++)
             if (i != hole && i != hole + 1)
                 this.addOnePipe(400, i * 60 + 10);
+        
+        // Add 1 to the score every time pipes are created and update score
+        this.score += 1;
+        this.labelScore.text = this.score;
     },
 };
 
