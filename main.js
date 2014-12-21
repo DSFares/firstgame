@@ -1,6 +1,9 @@
 // Initialize Phaser, and create a 400x490px game
 var game = new Phaser.Game(400, 490, Phaser.AUTO, 'gameDiv');
 
+// Initialize Space Key
+var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
 // Create our 'main' state that will contain the game
 var mainState = {
 
@@ -33,7 +36,6 @@ var mainState = {
         this.bird.body.gravity.y = 1000;
 
         // Call the 'jump' function when the spacekey is hit
-        var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         spaceKey.onDown.add(this.jump, this);
 
         // Create a group of pipes
