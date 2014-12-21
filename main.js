@@ -9,7 +9,7 @@ var mainState = {
   preload: function() {
     
     // Change the background color of the game
-    game.stage.backgroundColor = '#71c5cf'';
+    game.stage.backgroundColor = '#71c5cf';
     
     // Load the bird sprite
     game.load.image('bird', 'assets/bird.png');
@@ -41,6 +41,18 @@ var mainState = {
     //If the bird is out of the world (too high or too low), call the 'restartGame' function
     if (this.bird.inWorld == false)
       this.retartGame();
+  },
+  
+  // Make the bird jump
+  jump: function() {
+    // Add a vertical velocity to the bird
+    this.bird.body.velocity.y = -350;
+  },
+  
+  // Restart the game
+  restartGame: function() {
+    // Start the 'main' state, which restarts the game
+    game.state.start('main');
   },
 };
 
