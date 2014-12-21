@@ -53,7 +53,7 @@ var mainState = {
   restartGame: function() {
     // Start the 'main' state, which restarts the game
     game.state.start('main');
-  },
+  }
 };
 
 // Add and start the 'main' state to start the game
