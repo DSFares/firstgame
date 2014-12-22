@@ -20,7 +20,7 @@ var playState = {
         this.bird.body.gravity.y = 1000;
     
         // Initialize Space Key
-        var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        var spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         // Call the 'jump' function when the spacekey is hit
         spaceKey.onDown.add(this.jump, this);
 
@@ -33,8 +33,8 @@ var playState = {
         this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
         
         // Add the score display to the top left of the screen
-        this.score = 0;
-        this.labelScore = game.add.text(20, 20, "0", { font: "30px Arial", fill: "#ffffff" });
+        score = 0;
+        this.labelScore = game.add.text(20, 20, "0", style);
         
         // change the center of rotation for the bird to make flying animation more natural
         this.bird.anchor.setTo(-0.2, 0.5);
@@ -85,7 +85,7 @@ var playState = {
     restartGame: function() {
         
         // Start the 'main' state, which restarts the game
-        game.state.start('play');
+        game.state.start('menu');
     },
     
     addOnePipe: function(x, y) {
@@ -115,8 +115,8 @@ var playState = {
                 this.addOnePipe(400, i * 60 + 10);
         
         // Add 1 to the score every time pipes are created and update score
-        this.score += 1;
-        this.labelScore.text = this.score;
+        score += 1;
+        this.labelScore.text = score;
     },
     
     // Called whenever bird hits a pipe

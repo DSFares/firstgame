@@ -19,6 +19,6 @@ var loadState = {
     },
     
     create: function() {
-        game.state.start('play');
+        game.state.start('menu');
     }
 };
