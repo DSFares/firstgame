@@ -1,4 +1,8 @@
+// This state is where we load the game's assets
+
 var loadState = {
+    
+    // This function will be executed at the beginning
     preload: function() {
         
         // Change the background color of the game
@@ -15,6 +19,6 @@ var loadState = {
     },
     
     create: function() {
-        game.state.start('main');
+        game.state.start('play');
     }
 };

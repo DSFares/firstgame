@@ -1,8 +1,6 @@
 // Create our 'main' state that will contain the game
-var mainState = {
+var playState = {
 
-    // This function will be executed at the beginning
-    // That's where we load the game's assets
     preload: function() {
         
     },
@@ -87,7 +85,7 @@ var mainState = {
     restartGame: function() {
         
         // Start the 'main' state, which restarts the game
-        game.state.start('main');
+        game.state.start('play');
     },
     
     addOnePipe: function(x, y) {
