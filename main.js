@@ -1,24 +1,10 @@
-// Initialize Phaser, and create a 400x490px game
-var game = new Phaser.Game(400, 490, Phaser.AUTO, 'gameDiv');
-
 // Create our 'main' state that will contain the game
 var mainState = {
 
     // This function will be executed at the beginning
     // That's where we load the game's assets
     preload: function() {
-    
-        // Change the background color of the game
-        game.stage.backgroundColor = '#71c5cf';
-    
-        // Load the bird sprite
-        game.load.image('bird', 'assets/bird.png');
-    
-        // Load the pipe sprite
-        game.load.image('pipe', 'assets/pipe.png');
         
-        // Load the jump sound
-        game.load.audio('jump', 'assets/jump.wav');
     },
   
     // This function is called after the preload function
@@ -154,6 +140,8 @@ var mainState = {
     }
 };
 
+/*
 // Add and start the 'main' state to start the game
 game.state.add('main', mainState);
 game.state.start('main');
+*/
