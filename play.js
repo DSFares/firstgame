@@ -11,9 +11,10 @@ var play_state = {
         // Call the 'jump' function when the spacekey is hit
         space_key.onDown.add(this.jump, this);
         
-            /* not included? 
-            // Set the physics system
-            game.physics.startSystem(Phaser.Physics.ARCADE); */
+        /*
+        // Set the physics system
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        */
         
         // Create a group of pipes
         this.pipes = game.add.group(); // Create a group
@@ -25,9 +26,12 @@ var play_state = {
   
         // Display the bird on the screen
         this.bird = this.game.add.sprite(100, 245, 'bird');
-            /*
-            // Add gravity to the bird to make it fall
-            game.physics.arcade.enable(this.bird); */
+        
+        /*
+        // Add gravity to the bird to make it fall
+        game.physics.arcade.enable(this.bird);
+        */
+        
         this.bird.body.gravity.y = 1000;
         // change the center of rotation for the bird to make flying animation more natural
         this.bird.anchor.setTo(-0.2, 0.5);
@@ -79,7 +83,7 @@ var play_state = {
     },
     
     // Called whenever bird hits a pipe
-    hitPipe: function() {
+    hit_pipe: function() {
         // If the bird has already hit a pipe, we have nothing to do
         if (this.bird.alive == false)
             return;
